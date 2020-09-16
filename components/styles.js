@@ -16,6 +16,8 @@ const styles = {
     color: "#3E4993"
   },
   appButtonContainer: {
+    width: 300,
+    height: 50,
     marginTop: 50,
     borderRadius: 10,
     paddingVertical: 10,

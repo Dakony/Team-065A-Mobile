@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import * as Animatable from "react-native-animatable";
 import LinearGradient from "react-native-linear-gradient";
-import { FontAwesome, Feather } from "@expo/vector-icons";
+import { FontAwesome, Feather, MaterialIcons } from "@expo/vector-icons";
 import styles from "../components/styles";
 
 export default function Home({ navigation }) {
@@ -100,7 +100,7 @@ export default function Home({ navigation }) {
             placeholder=" Your Fullname"
             style={styles.textInput}
             autoCapitalize="none"
-            onChangeText={val => textInputChange(val)}
+            //onChangeText={val => textInputChange(val)}
           />
           {data.check_textInputChange ? (
             <Animatable.View animation="bounceIn">
@@ -120,7 +120,7 @@ export default function Home({ navigation }) {
           Email
         </Text>
         <View style={styles.action}>
-          <FontAwesome name="user-o" color="#05374a" size={20} />
+          <MaterialIcons name="email" size={20} color="#05374a" />
           <TextInput
             placeholder=" Your Email"
             style={styles.textInput}
