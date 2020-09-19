@@ -3,11 +3,14 @@ import React, { Component } from "react";
 
 // import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import Login from "./src/screens/loginScreen/Login";
+// import Login from "./src/screens/loginScreen/Login";
 import { NavigationContainer } from "@react-navigation/native";
 import { AppLoading } from "expo";
 import * as Font from "expo-font";
 import { Ionicons } from "@expo/vector-icons";
+import Signup from "./src/screens/register/SignUp";
+import Splash from "./src/screens/Splash";
+import Login from "./src/screens/loginScreen/Login";
 const Stack = createStackNavigator();
 
 class App extends Component {
@@ -30,14 +33,14 @@ class App extends Component {
     } else {
       return (
         <NavigationContainer>
-          <Stack.Navigator>
-            <Stack.Screen
-              name="Login"
-              component={Login}
-              options={{
-                headerShown: false,
-              }}
-            />
+          <Stack.Navigator
+            screenOptions={{
+              headerShown: false,
+            }}
+          >
+            <Stack.Screen name="splash" component={Splash} />
+            <Stack.Screen name="signup" component={Signup} />
+            <Stack.Screen name="Login" component={Login} />
           </Stack.Navigator>
         </NavigationContainer>
       );

@@ -1,4 +1,3 @@
-// import { StatusBar } from "expo-status-bar";
 import React from "react";
 import {
   View,
@@ -9,11 +8,13 @@ import {
   Platform,
   Alert,
   StatusBar,
+  ImageBackground,
 } from "react-native";
 import * as Animatable from "react-native-animatable";
 import LinearGradient from "expo-linear-gradient";
-import { FontAwesome, Feather } from "@expo/vector-icons";
+import { FontAwesome, Feather, MaterialIcons } from "@expo/vector-icons";
 import styles from "../../style/styles";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Home({ navigation }) {
   const [data, setData] = React.useState({
@@ -90,15 +91,44 @@ export default function Home({ navigation }) {
   };
 
   return (
-    <View style={styles.sigincontainer}>
+    <SafeAreaView style={styles.sigincontainer}>
       <StatusBar barStyle="light-content" backgroundColor="#2d3e50" />
-      <View style={styles.header}>
-        <Text style={styles.text_header}>Sign In</Text>
+      <View
+        // source={require("../img/quaBg.png")}
+        style={styles.header}
+      >
+        <Text style={styles.text_header}>Register </Text>
       </View>
+      {/* footer */}
       <Animatable.View animation="fadeInUpBig" style={styles.footer}>
-        <Text style={styles.text_footer}>Email</Text>
+        <Text style={styles.text_footer}>Name</Text>
         <View style={styles.action}>
           <FontAwesome name="user-o" color="#05374a" size={20} />
+          <TextInput
+            placeholder=" Your Fullname"
+            style={styles.textInput}
+            autoCapitalize="none"
+            //onChangeText={val => textInputChange(val)}
+          />
+          {data.check_textInputChange ? (
+            <Animatable.View animation="bounceIn">
+              <Feather name="check-circle" color="green" size={20} />
+            </Animatable.View>
+          ) : null}
+        </View>
+
+        <Text
+          style={[
+            styles.text_footer,
+            {
+              marginTop: 35,
+            },
+          ]}
+        >
+          Email
+        </Text>
+        <View style={styles.action}>
+          <MaterialIcons name="email" size={20} color="#05374a" />
           <TextInput
             placeholder=" Your Email"
             style={styles.textInput}
@@ -154,11 +184,11 @@ export default function Home({ navigation }) {
                 },
               ]}
             >
-              Sign In
+              Sign Up
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => navigation.navigate("signup")}
+            onPress={() => navigation.navigate("Login")}
             style={[
               styles.signUp,
               {
@@ -176,11 +206,11 @@ export default function Home({ navigation }) {
                 },
               ]}
             >
-              Sign Up
+              Sign In
             </Text>
           </TouchableOpacity>
         </View>
       </Animatable.View>
-    </View>
+    </SafeAreaView>
   );
 }
