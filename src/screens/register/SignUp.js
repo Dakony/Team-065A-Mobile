@@ -9,10 +9,15 @@ import {
   Alert,
   StatusBar,
   ImageBackground,
+  Image,
 } from "react-native";
 import * as Animatable from "react-native-animatable";
-import LinearGradient from "expo-linear-gradient";
-import { FontAwesome, Feather, MaterialIcons } from "@expo/vector-icons";
+import {
+  FontAwesome,
+  Feather,
+  MaterialIcons,
+  Entypo,
+} from "@expo/vector-icons";
 import styles from "../../style/styles";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -97,6 +102,17 @@ export default function Home({ navigation }) {
         // source={require("../img/quaBg.png")}
         style={styles.header}
       >
+        <Image
+          source={require("../../img/quaBwhite.png")}
+          style={{
+            width: 115,
+            height: 28,
+            margin: 10,
+            alignSelf: "center",
+            position: "absolute",
+            top: 5,
+          }}
+        />
         <Text style={styles.text_header}>Register </Text>
       </View>
       {/* footer */}
@@ -121,7 +137,7 @@ export default function Home({ navigation }) {
           style={[
             styles.text_footer,
             {
-              marginTop: 35,
+              marginTop: 15,
             },
           ]}
         >
@@ -146,7 +162,7 @@ export default function Home({ navigation }) {
           style={[
             styles.text_footer,
             {
-              marginTop: 35,
+              marginTop: 15,
             },
           ]}
         >
@@ -187,6 +203,37 @@ export default function Home({ navigation }) {
               Sign Up
             </Text>
           </TouchableOpacity>
+          {/* gcgcgc */}
+          <TouchableOpacity
+            // onPress={() => navigation.navigate("signup")}
+            style={[
+              styles.signUp,
+              {
+                borderColor: "#3b5998",
+                borderWidth: 2,
+                marginTop: 15,
+                flexDirection: "row",
+              },
+            ]}
+          >
+            <Entypo
+              name="facebook-with-circle"
+              size={25}
+              color={"#3b5998"}
+              style={{ marginRight: 10 }}
+            />
+            <Text
+              style={[
+                styles.textSign,
+                {
+                  color: "#3b5998",
+                },
+              ]}
+            >
+              SignUp with facebook
+            </Text>
+          </TouchableOpacity>
+          {/* hgvngnff */}
           <TouchableOpacity
             onPress={() => navigation.navigate("Login")}
             style={[

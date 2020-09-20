@@ -9,8 +9,10 @@ import {
   Platform,
   Alert,
   StatusBar,
+  Image,
 } from "react-native";
 import * as Animatable from "react-native-animatable";
+import { Entypo } from "react-native-vector-icons";
 import LinearGradient from "expo-linear-gradient";
 import { FontAwesome, Feather } from "@expo/vector-icons";
 import styles from "../../style/styles";
@@ -93,7 +95,18 @@ export default function Home({ navigation }) {
     <View style={styles.sigincontainer}>
       <StatusBar barStyle="light-content" backgroundColor="#2d3e50" />
       <View style={styles.header}>
-        <Text style={styles.text_header}>Sign In</Text>
+        <Image
+          source={require("../../img/quaBwhite.png")}
+          style={{
+            width: 115,
+            height: 28,
+            margin: 10,
+            alignSelf: "center",
+            position: "absolute",
+            top: 5,
+          }}
+        />
+        <Text style={styles.text_header}>Login</Text>
       </View>
       <Animatable.View animation="fadeInUpBig" style={styles.footer}>
         <Text style={styles.text_footer}>Email</Text>
@@ -154,31 +167,38 @@ export default function Home({ navigation }) {
                 },
               ]}
             >
-              Sign In
+              Login
             </Text>
           </TouchableOpacity>
-          {/* <TouchableOpacity
+          <TouchableOpacity
             // onPress={() => navigation.navigate("signup")}
             style={[
               styles.signUp,
               {
-                borderColor: "#bf0000",
-                borderWidth: 1,
+                borderColor: "#3b5998",
+                borderWidth: 2,
                 marginTop: 15,
+                flexDirection: "row",
               },
             ]}
           >
+            <Entypo
+              name="facebook-with-circle"
+              size={25}
+              color={"#3b5998"}
+              style={{ marginRight: 10 }}
+            />
             <Text
               style={[
                 styles.textSign,
                 {
-                  color: "#bf0000",
+                  color: "#3b5998",
                 },
               ]}
             >
-              Sign Up With Google
+              Login with facebook
             </Text>
-          </TouchableOpacity> */}
+          </TouchableOpacity>
           <TouchableOpacity
             onPress={() => navigation.navigate("signup")}
             style={[

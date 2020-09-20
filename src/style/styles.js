@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
 
   titlespalsh: {
     textAlign: "center",
-    fontSize: 20,
+    fontSize: 18,
     color: "#FFF",
     // color: "#86bc42",
     fontWeight: "bold",

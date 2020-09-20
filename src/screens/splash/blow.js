@@ -5,13 +5,21 @@ import {
   View,
   Dimensions,
   ImageBackground,
+  Animated,
+  BackHandler,
+  Platform,
+  Alert,
 } from "react-native";
+// import { PinchGestureHandler, State } from "react-native-gesture-handler";
 const { width, height } = Dimensions.get("window");
 import * as Animatable from "react-native-animatable";
 
 export default class blow extends Component {
   state = { wait: true };
   componentDidMount = () => {
+    if (Platform.OS == "android") {
+      BackHandler.addEventListener("hardwareBackPress", this.handleBackButton);
+    }
     setInterval(() => {
       this.setState({ wait: false });
     }, 1000);
@@ -19,6 +27,29 @@ export default class blow extends Component {
   navigateFunc = () => {
     this.props.navigation.navigate("splash");
   };
+
+  handleBackButton = () => {
+    Alert.alert(
+      "Exit App",
+      "Exiting the application?",
+      [
+        {
+          text: "Cancel",
+          onPress: () => console.log("Cancel Pressed"),
+          style: "cancel",
+        },
+        {
+          text: "OK",
+          onPress: () => BackHandler.exitApp(),
+        },
+      ],
+      {
+        cancelable: false,
+      }
+    );
+    return true;
+  };
+
   render() {
     return (
       <ImageBackground
@@ -40,14 +71,12 @@ export default class blow extends Component {
 const styles = StyleSheet.create({
   contain: {
     flex: 1,
-    // backgroundColor: "#2d3e50",
     width: width,
     height: height,
     justifyContent: "center",
     alignItems: "center",
   },
   blow: {
-    // backgroundColor: "#86bc42",
     width: 400,
     height: 400,
     borderColor: "#86bc42",
