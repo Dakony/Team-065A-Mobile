@@ -157,6 +157,28 @@ export default function Home({ navigation }) {
               Sign In
             </Text>
           </TouchableOpacity>
+          {/* <TouchableOpacity
+            // onPress={() => navigation.navigate("signup")}
+            style={[
+              styles.signUp,
+              {
+                borderColor: "#bf0000",
+                borderWidth: 1,
+                marginTop: 15,
+              },
+            ]}
+          >
+            <Text
+              style={[
+                styles.textSign,
+                {
+                  color: "#bf0000",
+                },
+              ]}
+            >
+              Sign Up With Google
+            </Text>
+          </TouchableOpacity> */}
           <TouchableOpacity
             onPress={() => navigation.navigate("signup")}
             style={[

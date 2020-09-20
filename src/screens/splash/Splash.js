@@ -43,7 +43,7 @@ export default function Splash({ navigation }) {
         ]}
         onPress={() => navigation.navigate("Login")}
       >
-        <Text style={styles.appButtonText}>Get Started</Text>
+        <Text style={styles.appButtonText}>GET STARTED</Text>
       </TouchableOpacity>
     </ImageBackground>
   );
