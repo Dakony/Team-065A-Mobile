@@ -5,18 +5,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
   },
   home: {
     flex: 1,
-    backgroundColor: "#009688",
+    backgroundColor: "#86bc42",
   },
 
   titlespalsh: {
     textAlign: "center",
     fontSize: 20,
-    color: "#3E4993",
+    color: "#FFF",
+    // color: "#86bc42",
+    fontWeight: "bold",
   },
   appButtonContainer: {
     width: 300,
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingVertical: 10,
     paddingHorizontal: 12,
-    backgroundColor: "#009688",
+    backgroundColor: "#86bc42",
   },
   appButtonText: {
     fontSize: 18,
